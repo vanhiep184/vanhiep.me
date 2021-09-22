@@ -7,7 +7,7 @@ import Link from "next/link";
 const name = "Van Hiep";
 export const siteTitle = "Van Hiep";
 
-export default function Layout({ children, home }) {
+export default function Layout({ children = {}, home = {} }) {
   return (
     <div className={styles.container}>
       <Head>

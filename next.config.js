@@ -12,9 +12,10 @@ module.exports = {
     };
   },
   // Use the CDN in production and localhost for development.
-  assetPrefix: !debug
-    ? "https://cdn.statically.io/gh/vanhiep184/vanhiep.me/gh-pages/"
-    : "",
+  // assetPrefix: !debug
+  //   ? "https://cdn.statically.io/gh/vanhiep184/vanhiep.me/gh-pages/"
+  //   : "",
+  assetPrefix: "",
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');

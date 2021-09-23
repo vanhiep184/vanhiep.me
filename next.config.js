@@ -11,8 +11,10 @@ module.exports = {
       "/about": { page: "/about" },
     };
   },
-  //assetPrefix: '',
-  assetPrefix: !debug ? "" : "",
+  // Use the CDN in production and localhost for development.
+  assetPrefix: !debug
+    ? "https://cdn.statically.io/gh/vanhiep184/vanhiep.me/gh-pages/"
+    : "",
   webpack: (config, { dev }) => {
     // Perform customizations to webpack config
     // console.log('webpack');

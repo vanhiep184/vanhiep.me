@@ -1,11 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Prata&display=swap');
+
+/* Light mode */
+
+:root {
+    --body-bg: #FFFFFF;
+    --body-color: #000000;
+    --primary-color: #4862E6;
+    --secondary-color: #4CD7F2;
+    --bg-color: #F2F4FF;
+}
+
+
+/* Dark mode */
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --body-bg: #000000;
+        --body-color: #FFFFFF;
+    }
+}
+
 html,
 body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Heebo, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     line-height: 1.6;
     font-size: 18px;
 }
@@ -26,4 +48,44 @@ a:hover {
 img {
     max-width: 100%;
     display: block;
+}
+
+h2 {
+    font-size: 5rem;
+}
+
+.logo {
+    @apply absolute top-1/2 left-1/2 text-2xl font-normal;
+    font-family: 'Prata', serif;
+    transform: translate(-50%, -50%) scale(6);
+}
+
+.home {
+    @apply h-screen;
+}
+
+nav ul {
+    @apply list-none;
+}
+
+nav a {
+    @apply mr-8 text-black font-medium list-none;
+    text-decoration: none;
+}
+
+.first-page {
+    @apply flex items-center justify-around h-screen text-white bg-black;
+}
+
+.square {
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: 70%;
+    left: 70%;
+}
+
+section img {
+    @apply h-full;
 }

@@ -144,7 +144,7 @@ export default function Layout({ children = {}, home = {} }) {
               ></MdDesignServices>
             </div>
             <div className={styles.secondaryCard}>
-              <span>MEVN Stack Designer</span>
+              <span>MEVN Stack Developer</span>
               <MdDesignServices
                 size="30"
                 className="ml-2 text-blue-400"

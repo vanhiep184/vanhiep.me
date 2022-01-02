@@ -130,10 +130,6 @@ export default function Layout({ children = {}, home = {} }) {
               </ul>
               <Link href="#contact">
                 <div className="flex items-center justify-center md:w-1/12 ">
-                  {/* <a className="items-center justify-center hidden ">
-                    Contact me
-                    <IoChevronForwardOutline></IoChevronForwardOutline>
-                  </a> */}
                   <button className="flex items-center justify-center w-10 h-10 font-bold bg-transparent rounded-full text-black-400 aspect-square md:hidden ">
                     <IoMenu size="32"></IoMenu>
                   </button>
@@ -189,9 +185,7 @@ export default function Layout({ children = {}, home = {} }) {
             </div>
           </div>
         </section>
-        {/* <section className={utilStyles.headingMd}>
-          <p>Front-end Developer, UI/UX Designer</p>
-        </section> */}
+
         {/* {home ? (
           <>
             <Image

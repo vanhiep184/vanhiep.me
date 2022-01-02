@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-import { IoChevronForwardOutline, IoPersonCircle } from "react-icons/io5";
+import { IoChevronForwardOutline, IoMenu } from "react-icons/io5";
 import { MdDesignServices, MdWavingHand } from "react-icons/md";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -110,11 +110,14 @@ export default function Layout({ children = {}, home = {} }) {
 
         <section className="home">
           <div className={styles.navbar}>
-            <nav className="flex items-center justify-evenly ">
-              {/* <div className="w-1/12">
-              </div> */}
-              <h1 className="w-1/12 sliding-text">
-                <img src="./images/logo.png" className="w-16" alt="Logo" />
+            <nav className="flex items-center justify-between md:justify-evenly">
+              <h1 className="flex items-center md:w-1/12 sliding-text">
+                <img
+                  src="./images/logo.png"
+                  className="hidden w-16 md:flex"
+                  alt="Logo"
+                />
+                <strong className={styles.logoName}>Van Hiep</strong>
               </h1>
               <ul className="hidden md:flex">
                 {navItems.map((item, index) => (
@@ -126,61 +129,64 @@ export default function Layout({ children = {}, home = {} }) {
                 ))}
               </ul>
               <Link href="#contact">
-                <div className="hidden w-1/12 md:flex">
-                  <a className="items-center justify-center hidden ">
+                <div className="flex items-center justify-center md:w-1/12 ">
+                  {/* <a className="items-center justify-center hidden ">
                     Contact me
                     <IoChevronForwardOutline></IoChevronForwardOutline>
-                  </a>
+                  </a> */}
+                  <button className="flex items-center justify-center w-10 h-10 font-bold bg-transparent rounded-full text-black-400 aspect-square md:hidden ">
+                    <IoMenu size="32"></IoMenu>
+                  </button>
                 </div>
               </Link>
             </nav>
           </div>
-          <div className={styles.avatar}>
-            <div className={styles.glassCard}>
-              <span>UI/UX Designer</span>
-              <MdDesignServices
-                size="30"
-                className="ml-2 text-blue-400"
-              ></MdDesignServices>
+          <div className={styles.profile}>
+            <div className={styles.avatar}>
+              <div className={styles.glassCard}>
+                <span>UI/UX Designer</span>
+                <MdDesignServices
+                  size="30"
+                  className="ml-2 text-blue-400"
+                ></MdDesignServices>
+              </div>
+              <div className={styles.secondaryCard}>
+                <span>MEVN Stack Developer</span>
+                <MdDesignServices
+                  size="30"
+                  className="ml-2 text-blue-400"
+                ></MdDesignServices>
+              </div>
+              <div className={styles.nameCard}>
+                <MdWavingHand
+                  size="30"
+                  className="mr-4 text-blue-400"
+                ></MdWavingHand>
+                <p>
+                  <span>Hi! I am</span>
+                  <strong>Hiep</strong>
+                </p>
+              </div>
+              <div className={styles.avatarImage}></div>
             </div>
-            <div className={styles.secondaryCard}>
-              <span>MEVN Stack Developer</span>
-              <MdDesignServices
-                size="30"
-                className="ml-2 text-blue-400"
-              ></MdDesignServices>
+            <div className={styles.title}>
+              <h1>Front-end Developer</h1>
+              <div className="flex items-center justify-center mt-1 md:mt-6">
+                <h5>
+                  I am from
+                  <strong> Ho Chi Minh City, Viet Nam</strong>
+                </h5>
+                <img
+                  src="./images/vietnam.png"
+                  alt="Vietnam Flag"
+                  width="40px"
+                />
+              </div>
+              <button className={styles.contactBtn}>
+                Contact me
+                <IoChevronForwardOutline></IoChevronForwardOutline>
+              </button>
             </div>
-            <div className={styles.nameCard}>
-              <MdWavingHand
-                size="30"
-                className="mr-4 text-blue-400"
-              ></MdWavingHand>
-              <p>
-                Hi! I am
-                <br />
-                <strong>Hiep</strong>
-              </p>
-            </div>
-            <div className={styles.avatarImage}></div>
-            {/* <img
-              className={styles.avatarImage}
-              src="/images/avatar.png"
-              alt="Avatar"
-            /> */}
-          </div>
-          <div className={styles.title}>
-            <h1>Front-end Developer</h1>
-            <div className="flex items-center justify-center mt-1 md:mt-6">
-              <h5>
-                I am from
-                <strong> Ho Chi Minh City, Viet Nam</strong>
-              </h5>
-              <img src="./images/vietnam.png" alt="Vietnam Flag" width="40px" />
-            </div>
-            <button className={styles.contactBtn}>
-              Contact me
-              <IoChevronForwardOutline></IoChevronForwardOutline>
-            </button>
           </div>
         </section>
         {/* <section className={utilStyles.headingMd}>

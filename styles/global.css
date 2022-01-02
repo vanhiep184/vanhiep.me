@@ -3,6 +3,63 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Prata&display=swap');
 
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+
 /* Light mode */
 
 :root {
@@ -55,7 +112,7 @@ h2 {
 }
 
 .logo {
-    @apply absolute top-1/2 left-1/2 text-2xl font-normal;
+    @apply absolute text-2xl font-normal top-1/2 left-1/2;
     font-family: 'Prata', serif;
     transform: translate(-50%, -50%) scale(6);
 }
@@ -69,8 +126,14 @@ nav ul {
 }
 
 nav a {
-    @apply mr-8 text-black font-medium list-none;
+    @apply px-3 py-1 font-medium text-black list-none rounded-lg backdrop-blur;
     text-decoration: none;
+}
+
+nav a:hover {
+    @apply bg-gray-200;
+    text-decoration: none;
+    background-color: #2f2f3015;
 }
 
 .first-page {

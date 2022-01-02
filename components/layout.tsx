@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import { IoChevronForwardOutline, IoPersonCircle } from "react-icons/io5";
+import { MdDesignServices, MdWavingHand } from "react-icons/md";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
 export const siteTitle = "Van Hiep";
 export default function Layout({ children = {}, home = {} }) {
@@ -68,9 +68,27 @@ export default function Layout({ children = {}, home = {} }) {
       },
     });
   };
+  const navItems = [
+    {
+      name: "Services",
+      href: "#services",
+    },
+    {
+      name: "Projects",
+      href: "#projects",
+    },
+    {
+      name: "Blog",
+      href: "#blog",
+    },
+    {
+      name: "About me",
+      href: "#about-me",
+    },
+  ];
 
   useEffect(() => {
-    aLogo();
+    // aLogo();
   }, []);
   return (
     <div ref={el} className={styles.container}>
@@ -87,53 +105,87 @@ export default function Layout({ children = {}, home = {} }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        <div className="square"></div>
-        <section className="home">
-          <nav className="flex items-center justify-between px-20 py-2 bg-white">
-            <h1 className="sliding-text">
-              <img src="./images/logo.png" className="w-16" alt="Logo" />
-            </h1>
-            <ul className="flex">
-              <li>
-                <Link href="/about">
-                  <a>About</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/hireme">
-                  <a>Hire me</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog">
-                  <a>Blog</a>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <h1 className="logo">Van Hiep</h1>
-        </section>
-        <section className="first-page">
-          <div>
-            <h2>Design work</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <img
-            src="https://images.unsplash.com/photo-1636493532482-44ec2354476b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3387&q=80"
-            alt="Design work"
-          />
-        </section>
-        <section className="first-page">
-          <img
-            src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80"
-            alt="Design work"
-          />
-          <div>
-            <h2>Teamwork</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </section>
+        {/* <div className="square"></div> */}
+        {/* <div className={styles.glassCard}>UI/UX Designer</div> */}
 
+        <section className="home">
+          <div className={styles.navbar}>
+            <nav className="flex items-center justify-evenly ">
+              {/* <div className="w-1/12">
+              </div> */}
+              <h1 className="w-1/12 sliding-text">
+                <img src="./images/logo.png" className="w-16" alt="Logo" />
+              </h1>
+              <ul className="hidden md:flex">
+                {navItems.map((item, index) => (
+                  <li key={`nav-${index}`} className={styles.navItem}>
+                    <Link href={item.href}>
+                      <a>{item.name}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href="#contact">
+                <div className="hidden w-1/12 md:flex">
+                  <a className="items-center justify-center hidden ">
+                    Contact me
+                    <IoChevronForwardOutline></IoChevronForwardOutline>
+                  </a>
+                </div>
+              </Link>
+            </nav>
+          </div>
+          <div className={styles.avatar}>
+            <div className={styles.glassCard}>
+              <span>UI/UX Designer</span>
+              <MdDesignServices
+                size="30"
+                className="ml-2 text-blue-400"
+              ></MdDesignServices>
+            </div>
+            <div className={styles.secondaryCard}>
+              <span>MEVN Stack Designer</span>
+              <MdDesignServices
+                size="30"
+                className="ml-2 text-blue-400"
+              ></MdDesignServices>
+            </div>
+            <div className={styles.nameCard}>
+              <MdWavingHand
+                size="30"
+                className="mr-4 text-blue-400"
+              ></MdWavingHand>
+              <p>
+                Hi! I am
+                <br />
+                <strong>Hiep</strong>
+              </p>
+            </div>
+            <div className={styles.avatarImage}></div>
+            {/* <img
+              className={styles.avatarImage}
+              src="/images/avatar.png"
+              alt="Avatar"
+            /> */}
+          </div>
+          <div className={styles.title}>
+            <h1>Front-end Developer</h1>
+            <div className="flex items-center justify-center mt-1 md:mt-6">
+              <h5>
+                I am from
+                <strong> Ho Chi Minh City, Viet Nam</strong>
+              </h5>
+              <img src="./images/vietnam.png" alt="Vietnam Flag" width="40px" />
+            </div>
+            <button className={styles.contactBtn}>
+              Contact me
+              <IoChevronForwardOutline></IoChevronForwardOutline>
+            </button>
+          </div>
+        </section>
+        {/* <section className={utilStyles.headingMd}>
+          <p>Front-end Developer, UI/UX Designer</p>
+        </section> */}
         {/* {home ? (
           <>
             <Image
@@ -169,13 +221,6 @@ export default function Layout({ children = {}, home = {} }) {
         )} */}
       </header>
       <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
     </div>
   );
 }

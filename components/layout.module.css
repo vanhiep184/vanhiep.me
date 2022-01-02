@@ -24,7 +24,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(95.2deg, rgba(173, 252, 234, 1), rgba(192, 229, 246, 1), #ffff00, #ff0000, rgba(192, 229, 246, 1), rgba(173, 252, 234, 1));
+    background: linear-gradient(95.2deg, rgba(173, 252, 234, 1), rgba(192, 229, 246, 1), #ffff00, #ff0000, rgba(192, 229, 246, 1), rgba(173, 252, 234, 1), rgba(173, 252, 234, 1), rgba(173, 252, 234, 1));
     background-size: 400%;
     z-index: -2;
     filter: blur(2px);

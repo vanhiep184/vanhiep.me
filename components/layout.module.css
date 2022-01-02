@@ -58,7 +58,7 @@
 }
 
 .avatar {
-    @apply relative flex items-center justify-center flex-col rounded-full;
+    @apply relative flex flex-col items-center justify-center rounded-full;
     min-width: min(19rem, 60vw);
     aspect-ratio: 1 / 1;
     background: linear-gradient(45deg, rgba(0, 221, 214, 1), rgb(240, 241, 243));
@@ -88,7 +88,6 @@
 
 .avatar::before {
     content: "";
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -206,7 +205,7 @@
         @apply hidden;
     }
     .nameCard {
-        @apply flex-row items-center left-1/2 transform -translate-x-1/2 min-w-max;
+        @apply flex-row items-center transform -translate-x-1/2 left-1/2 min-w-max;
         top: calc(100% + 1rem);
     }
     .nameCard p {

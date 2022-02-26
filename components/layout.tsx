@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-import { IoChevronForwardOutline, IoMenu } from "react-icons/io5";
+import { IoChevronDownSharp, IoMenu } from "react-icons/io5";
 import { MdDesignServices, MdWavingHand } from "react-icons/md";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -79,11 +79,11 @@ export default function Layout({ children = {}, home = {} }) {
     },
     {
       name: "Blog",
-      href: "#blog",
+      href: "#blogs",
     },
     {
       name: "About me",
-      href: "#about-me",
+      href: "#about",
     },
   ];
 
@@ -107,7 +107,6 @@ export default function Layout({ children = {}, home = {} }) {
       <header className={styles.header}>
         {/* <div className="square"></div> */}
         {/* <div className={styles.glassCard}>UI/UX Designer</div> */}
-
         <section className="home">
           <div className={styles.navbar}>
             <nav className="flex items-center justify-between md:justify-evenly">
@@ -178,14 +177,17 @@ export default function Layout({ children = {}, home = {} }) {
                   width="40px"
                 />
               </div>
-              <button className={styles.contactBtn}>
+              {/* <button className={styles.contactBtn}>
                 Contact me
                 <IoChevronForwardOutline></IoChevronForwardOutline>
-              </button>
+              </button> */}
+              <a href="#" className={styles.seeMore}>
+                See more
+                <IoChevronDownSharp className="ml-1"></IoChevronDownSharp>
+              </a>
             </div>
           </div>
         </section>
-
         {/* {home ? (
           <>
             <Image

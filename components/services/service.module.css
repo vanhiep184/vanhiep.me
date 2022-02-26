@@ -1,0 +1,13 @@
+.quoteContainer {
+    @apply flex flex-col items-center justify-center h-96;
+    background: radial-gradient(#e66465, #9198e5);
+    background: radial-gradient(var(--primary-color) 1%, var(--secondary-color) 50%);
+}
+
+.quoteContainer h3 {
+    @apply w-3/4 font-medium leading-normal text-center text-gray-600;
+}
+
+.quoteContainer p {
+    @apply text-sm font-thin leading-normal text-center text-gray-600;
+}
